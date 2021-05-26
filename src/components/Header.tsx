@@ -50,7 +50,7 @@ export function Header() {
 
       <Flex align="center" ml="auto">
         <HStack
-          spacing="4"
+          spacing="8"
           mx="8"
           pr="8"
           py="1"
