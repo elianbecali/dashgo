@@ -9,9 +9,10 @@ type SignInFormData = {
 };
 
 export default function SignIn() {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, formState } = useForm();
 
-  const handleSignIn: SubmitHandler<SignInFormData> = (data) => {
+  const handleSignIn: SubmitHandler<SignInFormData> = async (data) => {
+    await new Promise((resolve) => setTimeout(resolve, 2000));
     console.log(data);
   };
 
@@ -32,7 +33,7 @@ export default function SignIn() {
             name="email"
             type="email"
             label="E-mail"
-            {...register('email')}
+            {...register('email', { required: 'E-mail obrigatório' })}
           />
           <Input
             name="password"
@@ -42,7 +43,12 @@ export default function SignIn() {
           />
         </Stack>
 
-        <Button type="submit" mt="6" colorScheme="pink">
+        <Button
+          type="submit"
+          mt="6"
+          colorScheme="pink"
+          isLoading={formState.isSubmitting}
+        >
           Entrar
         </Button>
       </Flex>
