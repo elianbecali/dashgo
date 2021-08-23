@@ -2,10 +2,6 @@
 	Dashgo
 </h1>
 
-<h3 align="center">
-    ⚛ Explore por repositórios do Github. 💜
-</h3>
-
 <p align="center">
 
   <a href="https://github.com/elianbecali/dashgo/commits/main/">
